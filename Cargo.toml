@@ -1,0 +1,9 @@
+[package]
+name = "lcs"
+version = "0.1.0"
+authors = ["Luke Hsiao"]
+edition = "2018"
+
+[dependencies]
+clap = "2"
+yansi = "0.5"
