@@ -2,6 +2,13 @@
 name = "lcs"
 version = "0.1.0"
 authors = ["Luke Hsiao"]
+license = "MIT"
+description= "Tool for calculating the longest common subsequence edit distance between two strings."
+readme = "README.md"
+repository = "https://github.com/lukehsiao/lcs"
+homepage = "https://github.com/lukehsiao/lcs"
+keywords = ["lcs", "edit distance"]
+categories = ["command-line-utilities"]
 edition = "2018"
 
 [dependencies]
