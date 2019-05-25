@@ -32,6 +32,6 @@ Using the example from [Wikipedia](https://en.wikipedia.org/wiki/Edit_distance):
 
 ## Installation
 
-First, [install rust](https://rustup.rs/), then close the repository and run:
+First, [install rust](https://rustup.rs/), then `git clone` the repository and run:
 
     $ cargo install --path path/to/repo
