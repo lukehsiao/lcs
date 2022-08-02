@@ -57,18 +57,18 @@ fn lcs(string1: &str, string2: &str) -> (usize, usize, String) {
     while x != 0 && y != 0 {
         // Check element above is equal
         if table[x][y] == table[x - 1][y] {
-            x = x - 1;
+            x -= 1;
         }
         // check element to the left is equal
         else if table[x][y] == table[x][y - 1] {
-            y = y - 1;
+            y -= 1;
         } else {
             // check the two element at the respective x,y position is same
             assert_eq!(string1_chars[x - 1], string2_chars[y - 1]);
             let char = string1_chars[x - 1];
             common_seq.push(char);
-            x = x - 1;
-            y = y - 1;
+            x -= 1;
+            y -= 1;
         }
     }
     let len = table[total_rows - 1][total_columns - 1];
@@ -110,5 +110,4 @@ mod test {
         assert_eq!(len, 4);
         assert_eq!(lcs, "ittn");
     }
-
 }
