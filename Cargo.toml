@@ -9,8 +9,8 @@ repository = "https://github.com/lukehsiao/lcs"
 homepage = "https://github.com/lukehsiao/lcs"
 keywords = ["lcs", "edit distance"]
 categories = ["command-line-utilities"]
-edition = "2018"
+edition = "2021"
 
 [dependencies]
-clap = "2"
+clap = { version = "3", features = ["cargo"] }
 yansi = "0.5"
