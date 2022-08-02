@@ -12,13 +12,13 @@ Compute the length of the longest common subsequences between two strings.
 USAGE:
     lcs <str1> <str2>
 
-FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
-
 ARGS:
     <str1>
     <str2>
+
+OPTIONS:
+    -h, --help       Print help information
+    -V, --version    Print version information
 ```
 
 ## Example

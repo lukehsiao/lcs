@@ -1,6 +1,6 @@
 use std::cmp;
 
-use clap::{crate_authors, crate_version, App, AppSettings, Arg};
+use clap::{crate_version, App, AppSettings, Arg};
 use yansi::Paint;
 
 #[derive(Debug)]
@@ -12,7 +12,6 @@ struct Args {
 fn parse_args() -> Args {
     let matches = App::new("Longest Common Subsequence")
         .version(crate_version!())
-        .author(crate_authors!())
         .about("Compute the length of the longest common subsequences between two strings.")
         .setting(AppSettings::ArgRequiredElseHelp)
         .setting(AppSettings::ColoredHelp)
