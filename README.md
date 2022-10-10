@@ -7,18 +7,18 @@ students are expected to order a certain sequence of events.
 ## Usage
 
 ```
-Compute the length of the longest common subsequences between two strings.
+Tool for calculating the longest common subsequence edit distance between two strings.
 
-USAGE:
-    lcs <str1> <str2>
 
-FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
+Usage: lcs <STR1> <STR2>
 
-ARGS:
-    <str1>
-    <str2>
+Arguments:
+  <STR1>
+  <STR2>
+
+Options:
+  -h, --help     Print help information
+  -V, --version  Print version information
 ```
 
 ## Example
@@ -34,4 +34,4 @@ Using the example from [Wikipedia](https://en.wikipedia.org/wiki/Edit_distance):
 
 First, [install rust](https://rustup.rs/), then `git clone` the repository and run:
 
-    $ cargo install --path path/to/repo
+    $ cargo install --path path/to/repo --locked

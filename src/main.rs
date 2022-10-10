@@ -1,29 +1,14 @@
 use std::cmp;
 
-use clap::{crate_authors, crate_version, App, AppSettings, Arg};
+use clap::Parser;
 use yansi::Paint;
 
-#[derive(Debug)]
+#[derive(Parser)]
+#[command(author, version, about, long_about = None)]
+/// Compute the length of the longest common subsequences between two strings.
 struct Args {
     str1: String,
     str2: String,
-}
-
-fn parse_args() -> Args {
-    let matches = App::new("Longest Common Subsequence")
-        .version(crate_version!())
-        .author(crate_authors!())
-        .about("Compute the length of the longest common subsequences between two strings.")
-        .setting(AppSettings::ArgRequiredElseHelp)
-        .setting(AppSettings::ColoredHelp)
-        .arg(Arg::with_name("str1").required(true))
-        .arg(Arg::with_name("str2").required(true))
-        .get_matches();
-
-    Args {
-        str1: String::from(matches.value_of("str1").unwrap()),
-        str2: String::from(matches.value_of("str2").unwrap()),
-    }
 }
 
 /// Compute the longest common subsequence between two strings.
@@ -81,7 +66,7 @@ fn lcs(string1: &str, string2: &str) -> (usize, usize, String) {
 }
 
 fn main() {
-    let args = parse_args();
+    let args = Args::parse();
     let (dist, len, lcs) = lcs(args.str1.as_str(), args.str2.as_str());
     println!(
         "dist: {}\nlen(lcs): {}\nlcs: {}",
@@ -109,5 +94,11 @@ mod test {
         assert_eq!(dist, 5);
         assert_eq!(len, 4);
         assert_eq!(lcs, "ittn");
+    }
+
+    #[test]
+    fn verify_app() {
+        use clap::CommandFactory;
+        Args::command().debug_assert()
     }
 }
